@@ -14,8 +14,8 @@ Subject: [PATCH] This patch allows to add spare font besides default. Some
 
 diff --git a/config.def.h b/config.def.h
 index 482901e..676719e 100644
---- a/config.h
-+++ b/config.h
+--- a/config.def.h
++++ b/config.def.h
 @@ -6,6 +6,12 @@
   * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
   */
