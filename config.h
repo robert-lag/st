@@ -238,6 +238,7 @@ static MouseShortcut mshortcuts[] = {
 #define TERMMOD (ControlMask|ShiftMask)
 
 static char *openzettelkastenlinkcmd[] = { "/bin/sh", "-c", "dmenu-zettelkasten-link-handler -o", "externalpipe", NULL };
+static char *openzettelkastenhistorycmd[] = { "/bin/sh", "-c", "dmenu-zettelkasten-history-viewer -o", "externalpipe", NULL };
 static char *openurlcmd[] = { "/bin/sh", "-c", "dmenu-urlhandler -o", "externalpipe", NULL };
 static char *copyurlcmd[] = { "/bin/sh", "-c", "dmenu-urlhandler -c", "externalpipe", NULL };
 static char *copyoutput[] = { "/bin/sh", "-c", "dmenu-copyoutput", "externalpipe", NULL };
@@ -278,6 +279,7 @@ static Shortcut shortcuts[] = {
 	{ MODKEY,               XK_y,           externalpipe,   {.v = copyurlcmd } },
 	{ MODKEY,               XK_x,           externalpipe,   {.v = copyoutput } },
 	{ MODKEY,               XK_o,           externalpipe,   {.v = openzettelkastenlinkcmd } },
+	{ MODKEY,               XK_h,           externalpipe,   {.v = openzettelkastenhistorycmd } },
 };
 
 /*
