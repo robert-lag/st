@@ -237,8 +237,9 @@ static MouseShortcut mshortcuts[] = {
 #define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
 
-static char *openzettelkastenlinkcmd[] = { "/bin/sh", "-c", "dmenu-zettelkasten-link-handler -o", "externalpipe", NULL };
-static char *openzettelkastenhistorycmd[] = { "/bin/sh", "-c", "dmenu-zettelkasten-history-viewer -o", "externalpipe", NULL };
+static char *openzettelkastenlink[] = { "/bin/sh", "-c", "dmenu-zettelkasten-link-handler -o", "externalpipe", NULL };
+static char *openzettelkastenhistory[] = { "/bin/sh", "-c", "dmenu-zettelkasten-history-viewer -o", "externalpipe", NULL };
+static char *copyzettelkastennotelink[] = { "/bin/sh", "-c", "dmenu-zettelkasten-history-viewer -l", "externalpipe", NULL };
 static char *openurlcmd[] = { "/bin/sh", "-c", "dmenu-urlhandler -o", "externalpipe", NULL };
 static char *copyurlcmd[] = { "/bin/sh", "-c", "dmenu-urlhandler -c", "externalpipe", NULL };
 static char *copyoutput[] = { "/bin/sh", "-c", "dmenu-copyoutput", "externalpipe", NULL };
@@ -275,11 +276,12 @@ static Shortcut shortcuts[] = {
 	{ MODKEY,               XK_Down,        kscrolldown,    {.i =  1} },
 	{ MODKEY,               XK_u,           kscrollup,      {.i = -1} },
 	{ MODKEY,               XK_d,           kscrolldown,    {.i = -1} },
-	{ MODKEY,               XK_l,           externalpipe,   {.v = openurlcmd } },
-	{ MODKEY,               XK_y,           externalpipe,   {.v = copyurlcmd } },
-	{ MODKEY,               XK_x,           externalpipe,   {.v = copyoutput } },
-	{ MODKEY,               XK_o,           externalpipe,   {.v = openzettelkastenlinkcmd } },
-	{ MODKEY,               XK_h,           externalpipe,   {.v = openzettelkastenhistorycmd } },
+	{ MODKEY,               XK_q,           externalpipe,   {.v = openurlcmd } },
+	{ MODKEY,               XK_w,           externalpipe,   {.v = copyurlcmd } },
+	{ MODKEY,               XK_e,           externalpipe,   {.v = copyoutput } },
+	{ MODKEY,               XK_o,           externalpipe,   {.v = openzettelkastenlink } },
+	{ MODKEY,               XK_h,           externalpipe,   {.v = openzettelkastenhistory } },
+	{ MODKEY,               XK_l,           externalpipe,   {.v = copyzettelkastennotelink } },
 };
 
 /*
